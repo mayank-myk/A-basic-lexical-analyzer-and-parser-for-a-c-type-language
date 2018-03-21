@@ -1,0 +1,22 @@
+    _t0 = 3
+    a = _t0
+    _t0 = 1
+    b = _t0
+    _t0 = 2
+    c = _t0
+    _t0 = b
+    _t1 = 0
+    _t0 = _t0 > _t1
+    IFZ _t0 JumpTo _F0
+_F1:
+    _t0 = a
+    _t1 = 0
+    _t0 = _t0 > _t1
+    IFZ _t0 JumpTo _F2
+    _t0 = a
+    _t1 = 1
+    _t0 += _t1
+    a = _t0
+    JumpTo _F1
+_F2:
+_F0:

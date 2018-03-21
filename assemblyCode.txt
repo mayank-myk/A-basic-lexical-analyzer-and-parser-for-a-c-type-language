@@ -1,0 +1,89 @@
+MOV B, 600
+MOV [B], 3
+MOV B, 610
+MOV [B], 0
+MOV B, 600
+MOV A, [B]
+MOV B, 610
+MOV [B], A
+MOV B, 600
+MOV [B], 1
+MOV B, 612
+MOV [B], 0
+MOV B, 600
+MOV A, [B]
+MOV B, 612
+MOV [B], A
+MOV B, 600
+MOV [B], 2
+MOV B, 614
+MOV [B], 0
+MOV B, 600
+MOV A, [B]
+MOV B, 614
+MOV [B], A
+MOV B, 612
+MOV A, [B]
+MOV B, 600
+MOV [B], A
+MOV B, 602
+MOV [B], 0
+MOV B, 600
+MOV A, [B]
+MOV B, 602
+CMP A, [B]
+JLE R0
+MOV B, 600
+MOV [B], 1
+JMP R1
+R0:
+MOV B, 600
+MOV [B], 0
+R1:
+MOV A, 0
+MOV B, 600
+CMP A, [B]
+JZ _F0
+
+_F1:
+MOV B, 610
+MOV A, [B]
+MOV B, 600
+MOV [B], A
+MOV B, 602
+MOV [B], 0
+MOV B, 600
+MOV A, [B]
+MOV B, 602
+CMP A, [B]
+JLE R2
+MOV B, 600
+MOV [B], 1
+JMP R3
+R2:
+MOV B, 600
+MOV [B], 0
+R3:
+MOV A, 0
+MOV B, 600
+CMP A, [B]
+JZ _F2
+
+MOV B, 610
+MOV A, [B]
+MOV B, 600
+MOV [B], A
+MOV B, 602
+MOV [B], 1
+MOV B, 602
+MOV A, [B]
+MOV B, 600
+ADD [B], A
+MOV B, 600
+MOV A, [B]
+MOV B, 610
+MOV [B], A
+JMP _F1
+_F2:
+_F0:
+HALT
